@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Eagle Eye Networks</string>
+    <string name="error_login_msg">Error in login</string>
+    <string name="error_empty_fields">Fields can not be empty</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="login_btn">Login</string>
+</resources>
