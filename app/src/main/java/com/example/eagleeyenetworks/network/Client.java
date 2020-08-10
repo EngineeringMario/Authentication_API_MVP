@@ -20,9 +20,9 @@ public interface Client {
 
     @POST("oauth/token")
     Call<Token> login(
-            @Header("Authorization")String token,
-            @Query("username")String username,
-            @Query("password")String password,
-            @Query("grant_type")String grant_type
+            @Header("Authorization") String token,
+            @Query("username") String username,
+            @Query("password") String password,
+            @Query("grant_type") String grant_type
     );
 }

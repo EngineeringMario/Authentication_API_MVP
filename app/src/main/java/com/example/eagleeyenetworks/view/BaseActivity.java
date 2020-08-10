@@ -16,7 +16,7 @@ public class BaseActivity extends AppCompatActivity {
     protected SharedPreferences sharedPreferences;
     //TODO: change to keystoremanager
 
-   protected void initSharedPreferencesEncrypted()  {
+    protected void initSharedPreferencesEncrypted() {
         KeyGenParameterSpec keyGenParameterSpec = MasterKeys.AES256_GCM_SPEC;
         String masterKeyAlias;
         try {

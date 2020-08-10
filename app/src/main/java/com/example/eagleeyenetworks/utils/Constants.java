@@ -6,4 +6,6 @@ public class Constants {
     public final static String auth = "Authorization";
     public final static String PREFERENCES_NAME = "login-auth";
     public final static String TOKEN_KEY = "token_key";
+    public final static String USER_NAME = "onlinedemo@cameramanager.com";
+    public final static String PASSWORD = "demo1234";
 }

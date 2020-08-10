@@ -17,12 +17,10 @@ public class LoginPresenter implements LoginContract.Presenter {
 
     private final LoginContract.View view;
 
-    public LoginPresenter(LoginContract.View view){
+    public LoginPresenter(LoginContract.View view) {
         this.view = view;
 
     }
-
-
 
 
     @Override
@@ -34,7 +32,7 @@ public class LoginPresenter implements LoginContract.Presenter {
             @Override
             public void onResponse(Call<Token> call, Response<Token> response) {
 
-                view.onLoginSuccess( response.body().getAccessToken());
+                view.onLoginSuccess(response.body().getAccessToken());
 
             }
 

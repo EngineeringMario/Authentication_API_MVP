@@ -10,13 +10,13 @@ import android.widget.Toast;
 import com.example.eagleeyenetworks.R;
 import com.example.eagleeyenetworks.contract.LoginContract;
 import com.example.eagleeyenetworks.presenter.LoginPresenter;
+import com.example.eagleeyenetworks.utils.Constants;
 
 import static com.example.eagleeyenetworks.utils.Constants.TOKEN_KEY;
 
 public class LoginActivity extends BaseActivity implements LoginContract.View {
     private EditText email, password;
     private Button login;
-
     private LoginPresenter loginPresenter;
 
 
@@ -25,7 +25,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initSharedPreferencesEncrypted();
-      // checkForPreviousLogin();
+        // checkForPreviousLogin();
         initViews();
         loginPresenter = new LoginPresenter(this);
     }
@@ -40,16 +40,11 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
 //    }
 
 
-
     private void startMainActivity() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
-
-
-
-
 
 
     private void initViews() {
@@ -71,6 +66,9 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
     private boolean validate(String userName, String pass) {
         if (userName.trim().isEmpty() || pass.trim().isEmpty()) {
             Toast.makeText(this, getString(R.string.error_empty_fields), Toast.LENGTH_LONG).show();
+            return false;
+        } else if (!userName.equals(Constants.USER_NAME) || !pass.equals(Constants.PASSWORD)) {
+            Toast.makeText(this, R.string.wrongDetails, Toast.LENGTH_LONG).show();
             return false;
         }
         return true;

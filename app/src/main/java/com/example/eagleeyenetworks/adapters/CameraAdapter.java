@@ -44,21 +44,18 @@ public class CameraAdapter extends RecyclerView.Adapter<CameraAdapter.MyViewHold
     public int getItemCount() {
 
 
-
-
-            return cameras.size();
+        return cameras.size();
 
 
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView cameraName, cameraId, deviceType, macAddress, zoneId, accountId;
         onCameraListener onCameraListener;
 
 
-
-        public MyViewHolder(View itemView, onCameraListener onCameraListener ) {
-            super (itemView);
+        public MyViewHolder(View itemView, onCameraListener onCameraListener) {
+            super(itemView);
             cameraName = itemView.findViewById(R.id.name);
             cameraId = itemView.findViewById(R.id.cameraId);
             deviceType = itemView.findViewById(R.id.deviceType);

@@ -4,7 +4,8 @@ public interface LoginContract {
 
     interface View {
 
-       void onLoginSuccess(String token);
+        void onLoginSuccess(String token);
+
         void onLoginFailure(String message);
 
     }
